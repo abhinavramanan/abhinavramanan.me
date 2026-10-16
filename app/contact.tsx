@@ -10,7 +10,7 @@ export default function Contact() {
     const mailLink = `mailto:hi@abhinavramanan.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
 
     return (
-        <div className="relative flex items-center justify-center min-h-screen w-full overflow-hidden px-3 md:px-14">
+        <div className="relative flex items-center justify-center min-h-screen w-full overflow-hidden px-3 md:px-20">
             <h1 className="absolute -translate-y-56 text-[32vw] md:text-[280px] font-black tracking-tighter bg-linear-to-t to-[#FFFFFF] via-[#D4D9E1] from-[#C4CDD6] bg-clip-text text-transparent select-none pr-2">
                 CONTACT
             </h1>
