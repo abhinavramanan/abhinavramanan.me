@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+
+const autograph = localFont({
+  src: "../fonts/MrDeHaviland.ttf",
+  variable: "--font-mr-de-haviland",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,11 +25,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+      <html
+          lang="en"
+          className={`${geistSans.variable} ${geistMono.variable} ${autograph.variable} h-full antialiased`}
+      >
       <body className="min-h-full flex flex-col">{children}</body>
-    </html>
+      </html>
   );
 }
