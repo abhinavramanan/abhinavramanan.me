@@ -8,9 +8,9 @@ export default function Footer() {
                     © 2026 Abhinav Ramanan. All rights reserved.
                 </p>
 
-                <h1 className="translate-y-[18%] text-center text-[12vw] md:text-[150px] font-black tracking-tighter bg-linear-to-t from-[#FFFFFF] via-[#D4D9E1] to-[#C4CDD6] bg-clip-text text-transparent select-none leading-none whitespace-nowrap">
+                {/*<h1 className="translate-y-[18%] text-center text-[12vw] md:text-[150px] font-black tracking-tighter bg-linear-to-t from-[#FFFFFF] via-[#D4D9E1] to-[#C4CDD6] bg-clip-text text-transparent select-none leading-none whitespace-nowrap">
                     ABHINAV RAMANAN
-                </h1>
+                </h1>*/}
             </div>
         </footer>
     )

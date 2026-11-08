@@ -33,6 +33,15 @@ export default function Splash() {
             </div>
 
             <div className="relative z-10">
+
+                <div className="absolute top-[35%] -left-8 md:-left-12 z-30 bg-black text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-sm md:text-base -rotate-12 shadow-lg">
+                    Coding
+                </div>
+
+                <div className="absolute top-[12%] -right-4 md:-right-2 z-30 bg-black text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-sm md:text-base rotate-12 shadow-lg">
+                    Pianist
+                </div>
+
                 <div className="relative aspect-[0.82] w-[min(85vw,450px)] overflow-hidden rounded-t-[50%] bg-linear-to-t to-[#FF2928] from-[#FF663C]">
                     <Image
                         src="/portrait.jpg"

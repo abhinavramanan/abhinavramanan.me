@@ -9,6 +9,10 @@ const navItems = [
         targetId: "home",
     },
     {
+        label: "Projects",
+        targetId: "projects",
+    },
+    {
         label: "Contact",
         targetId: "contact",
     },

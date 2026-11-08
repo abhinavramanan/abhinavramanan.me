@@ -2,21 +2,26 @@ import Splash from "./home";
 import DefaultNavbar from "@/app/navigation";
 import Contact from "@/app/contact";
 import Footer from "@/app/footer";
+import Projects from "@/app/projects";
 
 export default function Home() {
-  return (
-    <div>
-        <DefaultNavbar/>
+    return (
+        <div>
+            <DefaultNavbar/>
 
-        <section className="flex min-h-screen w-full items-center justify-center">
-            <Splash/>
-        </section>
+            <section className="flex min-h-screen w-full items-center justify-center">
+                <Splash/>
+            </section>
 
-        <section id="contact" className="flex min-h-screen w-full items-center justify-center">
-            <Contact/>
-        </section>
+            <section id="projects" className="flex min-h-screen w-full items-center justify-center">
+                <Projects/>
+            </section>
 
-        <Footer/>
-    </div>
-  );
+            <section id="contact" className="flex min-h-screen w-full items-center justify-center">
+                <Contact/>
+            </section>
+
+            <Footer/>
+        </div>
+    );
 }
