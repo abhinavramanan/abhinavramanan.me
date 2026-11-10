@@ -16,7 +16,7 @@ export default function Contact() {
             </h1>
 
             <div className="relative z-10 w-full translate-y-24 bg-white rounded-[28px] overflow-hidden shadow-[0_0_40px_50px_#C4CDD6] flex flex-col md:flex-row my-12">
-                <div className="relative w-full md:w-3/8 min-h-[350px] md:min-h-[550px] bg-linear-to-t to-[#FF2928] from-[#FF663C]">
+                <div className="relative w-full md:w-3/8 min-h-[350px] md:min-h-[550px] bg-linear-to-t to-[#0047AB] from-[#007FFF]">
                     <Image
                         src="/portrait.jpg"
                         alt="Portrait"
