@@ -22,8 +22,8 @@ export default function Contact() {
                         alt="Portrait"
                         fill
                         priority
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                        className="object-cover object-center"
+                        sizes="(max-width: 530px) 85vw, 450px"
+                        className="object-cover object-top"
                     />
                 </div>
 

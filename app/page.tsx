@@ -6,10 +6,10 @@ import Projects from "@/app/projects";
 
 export default function Home() {
     return (
-        <div>
+        <div id="home">
             <DefaultNavbar/>
 
-            <section className="flex min-h-screen w-full items-center justify-center">
+            <section className="flex min-h-screen w-full items-center justify-center pt-20">
                 <Splash/>
             </section>
 

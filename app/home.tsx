@@ -42,15 +42,17 @@ export default function Splash() {
                     Pianist
                 </div>
 
-                <div className="relative aspect-[0.82] w-[min(85vw,450px)] overflow-hidden rounded-t-[50%] bg-linear-to-t to-[#0047AB] from-[#007FFF]">
-                    <Image
-                        src="/portrait.jpg"
-                        alt="Portrait"
-                        fill
-                        priority
-                        sizes="(max-width: 450px) 85vw, 450px"
-                        className="object-cover object-center"
-                    />
+                <div className="relative aspect-[0.82] w-[min(85vw,450px)] rounded-t-[50%] bg-linear-to-t to-[#0047AB] from-[#007FFF]">
+                    <div className="absolute inset-x-4 -top-8 bottom-0 md:inset-x-6 md:-top-12">
+                        <Image
+                            src="/portrait.png"
+                            alt="Portrait"
+                            fill
+                            priority
+                            sizes="(max-width: 530px) 85vw, 450px"
+                            className="object-contain object-bottom translate-x-7.5"
+                        />
+                    </div>
                 </div>
 
                 <div

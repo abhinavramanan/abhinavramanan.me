@@ -12,9 +12,9 @@ export default function Projects() {
             id: 1,
             title: "TextPilot",
             description: "An accessible document understanding app for visually impaired users. Entry for the 2026 Apple Student Swift Challenge.",
-            logo: "/path-to-logo.png",
+            logo: "/textpilot.png",
             language: "Swift",
-            langIcon: "swift",
+            langIcon: "swift.png",
             githubUrl: "https://github.com/abhinavramanan/textpilot",
             tags: [
                 { name: "Accepted", bgColor: "#137333", textColor: "#FFFFFF" },
@@ -24,20 +24,29 @@ export default function Projects() {
             id: 2,
             title: "MindBreak",
             description: "A focus timer with interactive cognitive breaks. Entry for the 2025 Apple Student Swift Challenge.",
-            logo: "/path-to-logo.png",
+            logo: "/mindbreak.png",
             language: "Swift",
-            langIcon: "swift",
-            // No githubUrl here - the button won't render
+            langIcon: "swift.png",
+            githubUrl: "https://github.com/abhinavramanan/mindbreak",
             tags: [
                 { name: "Accepted", bgColor: "#137333", textColor: "#FFFFFF" }
             ]
+        },
+        {
+            id: 3,
+            title: "abhinavramanan.me",
+            description: "A portfolio website built with Next.js and Tailwind CSS.",
+            logo: "/abhinavramanan.png",
+            language: "Next.js",
+            langIcon: "nextjs.png",
+            githubUrl: "https://github.com/abhinavramanan/abhinavramanan.me",
         }
         ]
 
     const ProjectCard = ({ project }: { project: typeof projects[number] }) => (
         <div className="flex h-full flex-col justify-between gap-4 rounded-[28px] bg-white p-5">
             <div>
-                <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-[20px] bg-black p-4">
+                <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-[20px]">
                     <img
                         src={project.logo}
                         alt={`${project.title} logo`}
@@ -46,22 +55,20 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-4">
-                    <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-2xl font-bold tracking-tight text-black">
+                    <div className="flex flex-nowrap items-center gap-3">
+                        <h3 className="min-w-0 truncate text-2xl font-bold tracking-tight text-black">
                             {project.title}
                         </h3>
 
-                        {/* Primary Language Tag */}
-                        <div className="flex items-center gap-1.5 rounded-full bg-black px-3 py-1.5 text-xs font-medium text-white">
+                        <div className="flex shrink-0 items-center gap-1.5 rounded-full bg-black px-3 py-1.5 text-xs font-medium text-white">
                             <img src={project.langIcon} alt="" className="h-3 w-3" />
                             {project.language}
                         </div>
 
-                        {/* Additional Custom Tags */}
                         {project.tags?.map((tag, index) => (
                             <div
                                 key={index}
-                                className="flex items-center rounded-full px-3 py-1.5 text-xs font-medium"
+                                className="flex shrink-0 items-center rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap"
                                 style={{
                                     backgroundColor: tag.bgColor,
                                     color: tag.textColor
