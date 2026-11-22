@@ -41,7 +41,7 @@ export default function Projects() {
             langIcon: "nextjs.png",
             githubUrl: "https://github.com/abhinavramanan/abhinavramanan.me",
         }
-        ]
+    ]
 
     const ProjectCard = ({ project }: { project: typeof projects[number] }) => (
         <div className="flex h-full flex-col justify-between gap-4 rounded-[28px] bg-white p-5">
@@ -55,8 +55,9 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-4">
-                    <div className="flex flex-nowrap items-center gap-3">
-                        <h3 className="min-w-0 truncate text-2xl font-bold tracking-tight text-black">
+                    {/* Wraps onto a second line when the card is too narrow */}
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                        <h3 className="max-w-full min-w-0 truncate text-2xl font-bold tracking-tight text-black">
                             {project.title}
                         </h3>
 
@@ -98,7 +99,7 @@ export default function Projects() {
 
     return (
         <section className="relative w-full px-5 py-16 md:px-20">
-            <h1 className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-gradient-to-t from-[#C4CDD6] via-[#D4D9E1] to-white bg-clip-text text-[25vw] font-black tracking-tighter text-transparent md:text-[280px]">
+            <h1 className="pointer-events-none absolute left-1/2 top-[calc(4rem_-_0.73em)] z-0 -translate-x-1/2 whitespace-nowrap leading-none bg-gradient-to-t from-[#C4CDD6] via-[#D4D9E1] to-white bg-clip-text text-[length:min(280px,19.5vw)] font-black tracking-tighter text-transparent">
                 PROJECTS
             </h1>
 
@@ -114,14 +115,14 @@ export default function Projects() {
                         type="button"
                         onClick={() => setShowAll((prev) => !prev)}
                         aria-expanded={showAll}
-                        className="flex w-full items-center justify-between rounded-[20px] bg-[#E9EDF1] px-6 py-4 text-black"
+                        className="flex w-full items-center justify-between gap-3 rounded-[20px] bg-[#E9EDF1] px-4 py-4 text-black sm:px-6"
                     >
                         <div className="flex items-center gap-3">
                             <span className="text-2xl font-light" aria-hidden="true">{showAll ? "−" : "+"}</span>
                             <span className="text-sm font-semibold">{showAll ? "Show less" : "View all projects"}</span>
                         </div>
 
-                        <span className="text-sm text-gray-500">
+                        <span className="shrink-0 whitespace-nowrap text-sm text-gray-500">
                              {showAll ? "Collapse" : `${projects.length - 3} more projects`}
                         </span>
                     </button>

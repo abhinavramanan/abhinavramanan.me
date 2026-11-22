@@ -6,18 +6,18 @@ import Projects from "@/app/projects";
 
 export default function Home() {
     return (
-        <div id="home">
+        <div id="home" className="overflow-x-clip">
             <DefaultNavbar/>
 
-            <section className="flex min-h-screen w-full items-center justify-center pt-20">
+            <section className="flex min-h-dvh w-full items-center justify-center pt-20">
                 <Splash/>
             </section>
 
-            <section id="projects" className="flex min-h-screen w-full items-center justify-center">
+            <section id="projects" className="flex min-h-dvh w-full items-center justify-center">
                 <Projects/>
             </section>
 
-            <section id="contact" className="flex min-h-screen w-full items-center justify-center">
+            <section id="contact" className="flex min-h-dvh w-full items-center justify-center">
                 <Contact/>
             </section>
 

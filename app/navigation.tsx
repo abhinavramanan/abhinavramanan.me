@@ -37,7 +37,7 @@ export default function DefaultNavbar() {
     const transition = reduceMotion ? { duration: 0 } : { duration: 0.7, ease };
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 px-4 pointer-events-none">
+        <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 pointer-events-none">
             <motion.nav
                 initial={false}
                 animate={{
@@ -59,7 +59,7 @@ export default function DefaultNavbar() {
                 className="mx-auto w-full flex items-center justify-between pointer-events-auto will-change-transform"
             >
                 <ul
-                    className="flex items-center gap-1 text-sm font-medium text-gray-900"
+                    className="flex items-center gap-0.5 sm:gap-1 text-xs sm:text-sm font-medium text-gray-900"
                     onMouseLeave={() => setHovered(null)}
                 >
                     {navItems.map((item) => (
@@ -68,12 +68,11 @@ export default function DefaultNavbar() {
                                 type="button"
                                 onClick={() => scrollToSection(item.targetId)}
                                 onMouseEnter={() => setHovered(item.targetId)}
-                                className="relative z-10 px-4 py-2 cursor-pointer"
+                                className="relative z-10 px-2 sm:px-4 py-2 cursor-pointer"
                             >
                                 {item.label}
                             </button>
 
-                            {/* Hover pill that glides between items */}
                             {hovered === item.targetId && (
                                 <motion.span
                                     layoutId="hover-pill"
@@ -85,7 +84,7 @@ export default function DefaultNavbar() {
                     ))}
                 </ul>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                     {socials.map(({ href, Icon, label }) => (
                         <motion.a
                             key={href}
@@ -96,9 +95,9 @@ export default function DefaultNavbar() {
                             whileHover={{ scale: 1.1, y: -1 }}
                             whileTap={{ scale: 0.92 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                            className="p-2.5 rounded-full bg-white text-black shadow-sm hover:bg-black hover:text-white transition-colors duration-300"
+                            className="p-2 sm:p-2.5 rounded-full bg-white text-black shadow-sm hover:bg-black hover:text-white transition-colors duration-300"
                         >
-                            <Icon className="w-5 h-5" />
+                            <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                         </motion.a>
                     ))}
                 </div>
