@@ -9,19 +9,21 @@ export default function Home() {
         <div id="home" className="overflow-x-clip">
             <DefaultNavbar/>
 
-            <section className="flex min-h-dvh w-full items-center justify-center pt-20">
+            <section className="snap-section flex min-h-dvh w-full items-center justify-center pt-20">
                 <Splash/>
             </section>
 
-            <section id="projects" className="flex min-h-dvh w-full items-center justify-center">
+            <section id="projects" className="snap-section flex min-h-dvh w-full items-center justify-center">
                 <Projects/>
             </section>
 
-            <section id="contact" className="flex min-h-dvh w-full items-center justify-center">
+            <section id="contact" className="snap-section flex min-h-dvh w-full items-center justify-center">
                 <Contact/>
             </section>
 
-            <Footer/>
+            <div className="snap-footer">
+                <Footer/>
+            </div>
         </div>
     );
 }

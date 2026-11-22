@@ -20,9 +20,23 @@
   }
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: none;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.snap-footer {
+  scroll-snap-align: end;
 }
 
 @layer utilities {
@@ -34,5 +48,3 @@ body {
     scrollbar-width: none;
   }
 }
-
-

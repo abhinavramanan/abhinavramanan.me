@@ -39,8 +39,9 @@ export default function DefaultNavbar() {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 pointer-events-none">
             <motion.nav
-                initial={false}
+                initial={reduceMotion ? false : { y: -40, opacity: 0 }}
                 animate={{
+                    opacity: 1,
                     y: scrolled ? 12 : 20,
                     maxWidth: scrolled ? 720 : 1280,
                     paddingTop: scrolled ? 8 : 4,

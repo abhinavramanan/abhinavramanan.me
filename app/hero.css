@@ -31,6 +31,10 @@
     --ck-f: 18;
     --ck-f2: 14;
 
+    --ck-rot: 14deg;
+    --coding-rot: -12deg;
+    --pianist-rot: 12deg;
+
     position: relative;
     width: 100%;
     min-height: 100dvh;
@@ -109,18 +113,26 @@
     line-height: 1.5;
     padding: calc(var(--chip-py) * var(--u)) calc(var(--chip-px) * var(--u));
     white-space: nowrap;
+    cursor: default;
+    transition: rotate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .hero-coding {
+    --rot: var(--coding-rot);
     left: calc(50% + var(--coding-x) * var(--u));
     top: calc(50% + (var(--coding-y) + var(--cy)) * var(--u));
-    rotate: -12deg;
+    rotate: var(--rot);
 }
 
 .hero-pianist {
+    --rot: var(--pianist-rot);
     right: calc(50% - var(--pianist-x) * var(--u));
     top: calc(50% + (var(--pianist-y) + var(--cy)) * var(--u));
-    rotate: 12deg;
+    rotate: var(--rot);
+}
+
+.hero-chip:hover {
+    rotate: 0deg;
 }
 
 .hero-cookie {
@@ -130,9 +142,14 @@
     top: calc(50% + (var(--ck-y) + var(--cy)) * var(--u));
     width: calc(var(--ck-s) * var(--u));
     aspect-ratio: 1;
-    rotate: 6deg;
+    rotate: var(--ck-rot);
     font-size: calc(var(--ck-f) * var(--u));
     line-height: 1.5;
+    transition: rotate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-cookie:hover {
+    rotate: 0deg;
 }
 
 .hero-cookie-email {
@@ -149,6 +166,7 @@
 .hero-name {
     position: absolute;
     z-index: 20;
+    pointer-events: none;
     font-size: calc(var(--name-fs) * var(--u));
     line-height: 1;
     white-space: nowrap;
@@ -164,4 +182,91 @@
     right: calc(50% - var(--ra-x) * var(--u));
     top: calc(50% + var(--cy) * var(--u));
     transform: translateY(calc(-50% + var(--ra-y) * var(--u)));
+}
+
+/* ---------- Entrance animations ----------
+   These use the individual `translate` / `scale` / `rotate` properties so
+   they compose with the existing `transform` positioning. */
+
+@keyframes hero-rise {
+    from { opacity: 0; translate: 0 calc(48 * var(--u)); }
+    to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes hero-pop {
+    from { opacity: 0; scale: 0.5; }
+    to   { opacity: 1; scale: 1; }
+}
+
+/* Chips fall under gravity, bounce, and swing like they're hanging. */
+@keyframes hero-drop {
+    0% {
+        opacity: 0;
+        translate: 0 calc(-420 * var(--u));
+        rotate: calc(var(--rot) + 30deg);
+        animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); /* accelerate */
+    }
+    8% {
+        opacity: 1;
+    }
+    38% {
+        opacity: 1;
+        translate: 0 0;
+        rotate: calc(var(--rot) - 14deg);
+        animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1); /* decelerate */
+    }
+    52% {
+        translate: 0 calc(-46 * var(--u));
+        rotate: calc(var(--rot) + 9deg);
+        animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+    }
+    64% {
+        translate: 0 0;
+        rotate: calc(var(--rot) - 6deg);
+        animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+    }
+    74% {
+        translate: 0 calc(-14 * var(--u));
+        rotate: calc(var(--rot) + 4deg);
+        animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+    }
+    84% {
+        translate: 0 0;
+        rotate: calc(var(--rot) - 2deg);
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
+        rotate: var(--rot);
+    }
+}
+
+.hero-hello,
+.hero-portrait,
+.hero-name {
+    animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-hello    { animation-delay: 0.05s; }
+.hero-portrait { animation-delay: 0.2s; }
+.hero-abhinav  { animation-delay: 0.45s; }
+.hero-ramanan  { animation-delay: 0.55s; }
+
+.hero-cookie {
+    animation: hero-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: 1s;
+}
+
+.hero-chip {
+    animation: hero-drop 1.5s linear backwards;
+}
+
+.hero-coding  { animation-delay: 0.8s; }
+.hero-pianist { animation-delay: 1s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero * {
+        animation: none !important;
+        transition: none !important;
+    }
 }
